@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+@model List<Cat>
+    <h1>Fluffy List Cats</h1>
+
+    <ul>
+        @for (int i=0; i <Model.Count; i++)
+        {
+            var currentCat = Model[i];
+             <li><a asp-controller="Cat" asp-action="Details" asp-route-id="@currentCat.Id">@currentCat.Name</a></li>
+        }
+
+    </ul>
+    //tag helper
+    <a asp-controller="Cat" asp-action="Add" class="btn btn-primary">Add</a>
+
+   
+}
